@@ -24,7 +24,7 @@ if gogogo:
         ans += r"(" + number[int(need[index - 1])] + r"\times{" + number[10] + r"}^{" + number[index - 1] + r"})"
         if index != len(need):
             ans += r"+"
-        index -= 1
+        index += 1
     ans = need + r"=" + ans
     if ans[-1] == "+":
         ans = ans[:-1]
