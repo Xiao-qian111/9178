@@ -19,10 +19,10 @@ need = str(st.number_input("输入1~99999999999之间的整数：", min_value=1,
 gogogo = st.button("生成算式")
 if gogogo:
     ans = r""
-    index = len(need)
+    index = 1
     for digit in need:
         ans += r"(" + number[int(need[index - 1])] + r"\times{" + number[10] + r"}^{" + number[index - 1] + r"})"
-        if index != 1:
+        if index != len(need):
             ans += r"+"
         index -= 1
     ans = need + r"=" + ans
