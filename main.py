@@ -21,7 +21,7 @@ if gogogo:
     ans = r""
     index = len(need)
     for digit in need:
-        ans += number[int(need[index - 1])] + r"\times{" + number[10] + r"}^{" + number[index] + r"}"
+        ans += r"(" + number[int(need[index - 1])] + r"\times{" + number[10] + r"}^{" + number[index] + r"})"
         if index != 1:
             ans += r"+"
         index -= 1
