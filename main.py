@@ -22,9 +22,11 @@ if gogogo:
     index = 1
     for digit in need:
         ans += r"(" + number[int(need[index - 1])] + r"\times{" + number[10] + r"}^{" + number[index - 1] + r"})"
-        if index != len(need) - 1:
+        if index != len(need):
             ans += r"+"
         index -= 1
     ans = need + r"=" + ans
+    if ans[-1] == "+":
+        ans = ans[:-1]
     emp.latex(ans)
     st.write("LaTeX代码：" + ans)
