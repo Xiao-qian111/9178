@@ -27,3 +27,4 @@ if gogogo:
         index -= 1
     ans = need + r"=" + ans
     emp.latex(ans)
+    st.write("LaTeX代码：" + ans)
