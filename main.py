@@ -14,7 +14,7 @@ number = [
     r"((7+8)-\sqrt{9}+1)-\abs{(78+(-91))+(9+1)}"    # 10
 ]
 st.header("9178生成器", text_alignment="center")
-st.write("未满18岁的用户可以使用，因为SCXG是给", text_alignment="center")
+st.subtitle("未满18岁的用户可以使用，因为SCXG是给", text_alignment="center")
 need = str(st.number_input("输入1~99999999999之间的整数：", min_value=1, max_value=99999999999, step=1))
 gogogo = st.button("生成算式")
 if gogogo:
