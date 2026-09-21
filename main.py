@@ -27,6 +27,7 @@ def compute(need):
     flag = False
     if need < 0:
         flag = True
+        need = 0 - need
     need = str(need)
     index = 1
     for digit in need:
