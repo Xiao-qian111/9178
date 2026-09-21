@@ -33,7 +33,6 @@ def compute(need):
         if index != len(need):
             ans += r"+"
         index += 1
-    ans = need + r"=" + ans
     if ans[-1] == "+":
         ans = ans[:-1]
     yesiknow[int(need)] = ans
@@ -46,5 +45,6 @@ num = int(st.number_input("输入一个整数：", step=1))
 gogogo = st.button("生成算式")
 if gogogo:
     ans = compute(num)
+    ans = str(num) + r"=" + ans
     emp.latex(ans)
     st.write("LaTeX代码：" + ans)
