@@ -47,6 +47,7 @@ def compute(need):
 
 st.title("9178生成器", text_alignment="center")
 st.subheader("未满18岁的用户可以使用，因为SCXG是给", text_alignment="center")
+st.warning("温馨提示：该app现在正在更新，使用过程中可能会出现一些bug或计算结果错误，感谢您的谅解")
 num = int(st.number_input("输入一个整数：", step=1))
 gogogo = st.button("生成算式")
 if gogogo:
