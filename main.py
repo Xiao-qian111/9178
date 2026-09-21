@@ -13,20 +13,38 @@ number = [
     r"((91-78)-(\sqrt{9\times1}-(7-8)))",    # 9
     r"(((7+8)-\sqrt{9}+1)-|(78+(-91))+(9+1)|)"    # 10
 ]
-st.title("9178生成器", text_alignment="center")
-st.subheader("未满18岁的用户可以使用，因为SCXG是给", text_alignment="center")
-need = str(st.number_input("输入1~99999999999之间的整数：", min_value=1, max_value=99999999999, step=1))
-gogogo = st.button("生成算式")
-if gogogo:
+yesiknow = {}
+
+def compute(need):
+    need = int(need)
+    if need <= 10:
+        return number[need]
+    try:
+        return yesiknow[need]
+    except:
+        pass
     ans = r""
+    if need < 0:
+        ans = r"-(" + ans + r")"
+    need = str(need)
     index = 1
     for digit in need:
-        ans += r"(" + number[int(need[len(need) - index])] + r"\times{" + number[10] + r"}^{" + number[index - 1] + r"})"
+        ans += r"(" + compute(int(need[len(need) - index])) + r"\times{" + compute(10) + r"}^{" + compute(index - 1) + r"})"
         if index != len(need):
             ans += r"+"
         index += 1
     ans = need + r"=" + ans
     if ans[-1] == "+":
         ans = ans[:-1]
+    yesiknow[int(need)] = ans
+    return ans
+    
+
+st.title("9178生成器", text_alignment="center")
+st.subheader("未满18岁的用户可以使用，因为SCXG是给", text_alignment="center")
+num = int(st.number_input("输入一个整数：", step=1))
+gogogo = st.button("生成算式")
+if gogogo:
+    compute(num)
     emp.latex(ans)
     st.write("LaTeX代码：" + ans)
