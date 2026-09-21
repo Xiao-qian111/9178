@@ -24,8 +24,9 @@ def compute(need):
     except:
         pass
     ans = r""
+    flag = False
     if need < 0:
-        ans = r"-(" + ans + r")"
+        flag = True
     need = str(need)
     index = 1
     for digit in need:
@@ -36,6 +37,8 @@ def compute(need):
     if ans[-1] == "+":
         ans = ans[:-1]
     yesiknow[int(need)] = ans
+    if flag:
+        ans = r"-(" + ans + r")"
     return ans
     
 
