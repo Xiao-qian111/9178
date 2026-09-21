@@ -17,7 +17,7 @@ yesiknow = {}
 
 def compute(need):
     need = int(need)
-    if need <= 10:
+    if need <= 10 and need >= -10:
         if need < 0:
             return r"-(" + number[0 - need] + r")"
         return number[need]
