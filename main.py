@@ -45,6 +45,6 @@ st.subheader("未满18岁的用户可以使用，因为SCXG是给", text_alignme
 num = int(st.number_input("输入一个整数：", step=1))
 gogogo = st.button("生成算式")
 if gogogo:
-    compute(num)
+    ans = compute(num)
     emp.latex(ans)
     st.write("LaTeX代码：" + ans)
